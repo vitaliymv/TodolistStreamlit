@@ -12,7 +12,7 @@ def get_unlocked_achievement(done_count):
 
 def get_next_achievement(done_count):
     for a in achievements:
-        if done_count >= a["threshold"]:
+        if done_count < a["threshold"]:
             return a
     return None
 
