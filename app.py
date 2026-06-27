@@ -1,5 +1,6 @@
 import streamlit as st
 from tasks import render_tasks_tab
+from analytics import render_analytics_tab
 import json
 st.set_page_config(page_title="Todo manager", layout="wide")
 
@@ -26,6 +27,8 @@ def render_export_tasks(tasks):
 with tabs[0]:
     render_tasks_tab()
 
+with tabs[1]:
+    render_analytics_tab(st.session_state.tasks)
 
 with tabs[3]:
     render_export_tasks(st.session_state.tasks)
