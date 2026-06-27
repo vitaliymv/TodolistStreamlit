@@ -55,11 +55,11 @@ def render_achievement_tab(tasks):
                     </div>
                 """, unsafe_allow_html=True)
 
-        if next_ach:
-            remaining = next_ach["threshold"] - done_count
-            progress = done_count / next_ach["threshold"]
-            st.markdown(f"To achievement: {next_ach['title']} "
-                        f"Remaining {remaining} tasks")
-            st.progress(min(progress, 1.0))
-        else:
-            st.success("All achievement unlocked")
+    if next_ach:
+        remaining = next_ach["threshold"] - done_count
+        progress = done_count / next_ach["threshold"]
+        st.markdown(f"To achievement: {next_ach['title']} "
+                    f"Remaining {remaining} tasks")
+        st.progress(min(progress, 1.0))
+    else:
+        st.success("All achievement unlocked")
