@@ -49,7 +49,7 @@ def render_charts(tasks):
     priority_counts = df[
         "priority"
     ].value_counts().reindex(priority_order, fill_value=0).reset_index()
-    priority_counts.columns = ["status", "count"]
+    priority_counts.columns = ["priority", "count"]
     fig_pr = px.bar(
         priority_counts,
         "priority",
