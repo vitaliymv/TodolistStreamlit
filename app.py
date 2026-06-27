@@ -1,6 +1,7 @@
 import streamlit as st
 from tasks import render_tasks_tab
 from analytics import render_analytics_tab
+from achievements import render_achievement_tab
 import json
 st.set_page_config(page_title="Todo manager", layout="wide")
 
@@ -29,6 +30,9 @@ with tabs[0]:
 
 with tabs[1]:
     render_analytics_tab(st.session_state.tasks)
+
+with tabs[2]:
+    render_achievement_tab(st.session_state.tasks)
 
 with tabs[3]:
     render_export_tasks(st.session_state.tasks)
